@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5BE" />
+      <stop offset="45%" stop-color="#D6B779" />
+      <stop offset="100%" stop-color="#9E7B3B" />
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1D35" />
+      <stop offset="100%" stop-color="#071426" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGradient)" />
+  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="url(#goldGradient)" stroke-width="1.5" stroke-opacity="0.75" />
+
+  <!-- Monogram P -->
+  <text x="27" y="45" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" fill="url(#goldGradient)" text-anchor="middle">P</text>
+  
+  <!-- Subtle Artistry Accent A -->
+  <text x="44" y="47" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="22" font-style="italic" font-weight="600" fill="#F3E5BE" text-anchor="middle" opacity="0.9">A</text>
+
+  <!-- Sparkle Star Accent -->
+  <path d="M 46 13 Q 46 17 49 17 Q 46 17 46 21 Q 46 17 43 17 Q 46 17 46 13 Z" fill="#F3E5BE" />
+  <circle cx="46" cy="17" r="0.75" fill="#FFFFFF" />
+</svg>
+

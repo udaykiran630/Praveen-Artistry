@@ -1,0 +1,201 @@
+/*
+ * Tailwind v4 entry. Keep @imports at the top. Remote fonts load via <link> in __root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-accent: "Cormorant Garamond", Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-deep: var(--gold-deep);
+  --color-whatsapp: var(--whatsapp);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  /* Navy scale */
+  --background: oklch(0.19 0.041 256.5);      /* #071426 */
+  --surface: oklch(0.23 0.053 256.3);         /* #0B1D35 */
+  --card: oklch(0.26 0.059 257.2);            /* #102440 */
+  --foreground: oklch(1 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.23 0.053 256.3);
+  --popover-foreground: oklch(1 0 0);
+  /* Gold */
+  --gold: oklch(0.792 0.088 84);              /* #D6B779 */
+  --gold-soft: oklch(0.86 0.06 84);
+  --gold-deep: oklch(0.66 0.09 78);
+  --primary: var(--gold);
+  --primary-foreground: oklch(0.19 0.041 256.5);
+  --secondary: oklch(0.26 0.059 257.2);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.26 0.059 257.2);
+  --muted-foreground: oklch(0.755 0.022 259.2); /* #A7B0BE */
+  --accent: oklch(0.308 0.064 257.8);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.75 0.14 155);
+  --whatsapp: oklch(0.72 0.17 150);
+  --border: oklch(0.792 0.088 84 / 18%);
+  --input: oklch(0.755 0.022 259.2 / 25%);
+  --ring: var(--gold);
+
+  --gradient-veil: linear-gradient(90deg, oklch(0.19 0.041 256.5 / 96%) 0%, oklch(0.19 0.041 256.5 / 75%) 40%, oklch(0.19 0.041 256.5 / 10%) 100%);
+  --gradient-veil-bottom: linear-gradient(180deg, oklch(0.19 0.041 256.5 / 0%) 40%, oklch(0.19 0.041 256.5 / 95%) 100%);
+  --gradient-gold-line: linear-gradient(90deg, transparent, var(--gold), transparent);
+  --shadow-gold: 0 20px 50px -20px oklch(0.792 0.088 84 / 35%);
+  --shadow-deep: 0 30px 60px -30px oklch(0.1 0.03 256 / 80%);
+
+  --chart-1: var(--gold);
+  --chart-2: oklch(0.7 0.1 230);
+  --chart-3: oklch(0.6 0.08 260);
+  --chart-4: oklch(0.86 0.06 84);
+  --chart-5: oklch(0.5 0.06 256);
+  --sidebar: oklch(0.23 0.053 256.3);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: oklch(0.19 0.041 256.5);
+  --sidebar-accent: oklch(0.26 0.059 257.2);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.792 0.088 84 / 15%);
+  --sidebar-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: var(--gold);
+    color: var(--primary-foreground);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility font-accent-italic {
+  font-family: var(--font-accent);
+  font-style: italic;
+}
+
+@utility gold-rule {
+  height: 1px;
+  background: var(--gradient-gold-line);
+}
+
+@utility text-gold-gradient {
+  background: linear-gradient(100deg, var(--gold-soft), var(--gold) 45%, var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-veil {
+  background: var(--gradient-veil);
+}
+
+@utility bg-veil-bottom {
+  background: var(--gradient-veil-bottom);
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+@utility shadow-deep {
+  box-shadow: var(--shadow-deep);
+}
+
+@utility frame-gold {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    border: 1px solid oklch(0.792 0.088 84 / 45%);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+@utility grain {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
